@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "335927853588",
+    "project_id": "flavoriaflutter",
+    "storage_bucket": "flavoriaflutter.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335927853588:android:d038bc69cd5010c5a95d01",
+        "android_client_info": {
+          "package_name": "com.example.flavoriaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "335927853588-87hnuamrm2apr43ldn96khk629e6opgr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flavoriaapp",
+            "certificate_hash": "c933cbfd1ac1d7a7731e258f4f01dc637f981d0a"
+          }
+        },
+        {
+          "client_id": "335927853588-ah22ks7m25d93j19nfm22vfg2i81vma8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC96GSvhtVMKdouFvii1vGE5qK45-7Eukw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "335927853588-ah22ks7m25d93j19nfm22vfg2i81vma8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

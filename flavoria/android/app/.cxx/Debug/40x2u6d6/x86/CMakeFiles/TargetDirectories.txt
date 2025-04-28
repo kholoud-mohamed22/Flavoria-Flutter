@@ -1,0 +1,2 @@
+D:/kholoud/apps/flavoria/android/app/.cxx/Debug/40x2u6d6/x86/CMakeFiles/edit_cache.dir
+D:/kholoud/apps/flavoria/android/app/.cxx/Debug/40x2u6d6/x86/CMakeFiles/rebuild_cache.dir
