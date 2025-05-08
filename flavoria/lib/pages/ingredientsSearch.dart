@@ -58,7 +58,9 @@ class _IngredientsSearchState extends State<IngredientsSearch> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+      ),
       body: ingredientsList.isEmpty
           ? Center(
               child: CircularProgressIndicator(color: AppColors.basicColor))

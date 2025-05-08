@@ -20,12 +20,16 @@ class MealCard extends StatefulWidget {
   String? day;
   final MealModel meal;
   final fromPlan;
+  final VoidCallback? onFavoriteRemoved;
+  final VoidCallback? onPlanRemoved;
 
   MealCard({
     super.key,
     required this.meal,
     this.delete,
     this.fromPlan,
+    this.onFavoriteRemoved,
+    this.onPlanRemoved,
     this.day,
   });
 
@@ -63,6 +67,7 @@ class _MealCardState extends State<MealCard> {
     if (mounted) {
       setState(() {});
     }
+    update = true;
 
     print(meal.Name);
   }
@@ -105,9 +110,7 @@ class _MealCardState extends State<MealCard> {
           if (widget.fromPlan == true) {
             // إضافة الوجبة إلى Firebase هنا
             await addMealinDay(widget.meal);
-            Plan(
-              update: updatePlan,
-            );
+
             Navigator.pop(
               context,
             ); // العودة إلى صفحة الخطة
@@ -174,6 +177,9 @@ class _MealCardState extends State<MealCard> {
                             setState(() {
                               isFavorite = false;
                             });
+                            if (widget.onFavoriteRemoved != null) {
+                              widget.onFavoriteRemoved!();
+                            }
                           } else {
                             await favoritesService.addFavoriteMeal(
                                 mealId, mealData, context);
@@ -203,7 +209,9 @@ class _MealCardState extends State<MealCard> {
                                     .delete();
                                 if (mounted) {
                                   setState(() {
-                                    // يمكنك هنا إزالة الوجبة من القائمة يدويًا
+                                    if (widget.onPlanRemoved != null) {
+                                      widget.onPlanRemoved!();
+                                    }
                                   });
                                 }
                               },
@@ -244,3 +252,5 @@ Route createScaleRoute(Widget page) {
     },
   );
 }
+
+var update;

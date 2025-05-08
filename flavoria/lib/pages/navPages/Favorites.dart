@@ -97,7 +97,14 @@ class _FavoritesState extends State<Favorites> {
                           return Container(
                               width: 300,
                               height: 350,
-                              child: MealCard(meal: m));
+                              child: MealCard(
+                                meal: m,
+                                onFavoriteRemoved: () {
+                                  setState(() {
+                                    mealsIds.removeAt(index);
+                                  });
+                                },
+                              ));
                         },
                       ),
                     ],

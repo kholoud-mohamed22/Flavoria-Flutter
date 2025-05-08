@@ -11,8 +11,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Plan extends StatefulWidget {
-  final VoidCallback? update;
-  Plan({super.key, this.update});
+  Plan({
+    super.key,
+  });
 
   @override
   State<Plan> createState() => _PlanState();
@@ -137,8 +138,10 @@ class _PlanState extends State<Plan> {
 
   @override
   void initState() {
-    widget.update;
     print(mealsIdsPerDay.length);
+    if (update == true) {
+      setState(() {});
+    }
     getPlanMeals();
     super.initState();
   }
@@ -230,6 +233,7 @@ class _PlanState extends State<Plan> {
                                         createRoute(Searchinplan(
                                           day: days[index],
                                         )));
+                                    setState(() {});
                                   },
                                   child: Text(
                                     'ADD',
@@ -263,6 +267,12 @@ class _PlanState extends State<Plan> {
                                             day: days[index],
                                             meal: m,
                                             delete: true,
+                                            onPlanRemoved: () {
+                                              setState(() {
+                                                mealsIdsPerDay[index]
+                                                    .removeAt(mealIndex);
+                                              });
+                                            },
                                           );
                                         }),
                                   )

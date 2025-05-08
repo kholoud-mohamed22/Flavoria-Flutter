@@ -19,7 +19,7 @@ class _SearchState extends State<Search> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            height: 20,
+            height: 30,
           ),
           Padding(
             padding: EdgeInsets.all(8),

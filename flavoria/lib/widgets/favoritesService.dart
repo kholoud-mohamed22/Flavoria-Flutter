@@ -48,11 +48,10 @@ class FavoritesService {
     return meal.exists;
   }
 
-  // دالة لإزالة الوجبة من المفضلة
   Future<void> removeFavoriteMeal(String mealId, BuildContext context) async {
     final user = FirebaseAuth.instance.currentUser;
     if (user == null) {
-      print("⚠️ No user logged in");
+      print(" No user logged in");
       return;
     }
     try {
@@ -62,10 +61,11 @@ class FavoritesService {
           .collection('favorites')
           .doc(mealId)
           .delete();
+
       showCustomSnackBar(context, 'Meal removed from favorites');
-      print("Meal removed from favorites ✅");
+      print("Meal removed from favorites");
     } catch (e) {
-      print("❌ Failed to remove meal: $e");
+      print(" Failed to remove meal: $e");
     }
   }
 }
